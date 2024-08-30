@@ -1,0 +1,26 @@
+1. Viết chương trình/lệnh mô tả các bước thực hiện sơ đồ git tree sau đây ở local repository
+->git init 
+->touch c1.txt ->notepad c1.txt -> git add c1.txt -> git commit -m "add file c1"
+->touch c2.txt ->notepad c2.txt -> git add c2.txt -> git commit -m "add file c2"
+->touch c3.txt ->notepad c3.txt -> git add c3.txt -> git commit -m "add file c3"
+->touch c4.txt ->notepad c4.txt -> git add c4.txt -> git commit -m "add file c4"
+->touch c5.txt ->notepad c5.txt -> git add c5.txt -> git commit -m "add file c5"
+->touch c6.txt ->notepad c6.txt -> git add c6.txt -> git commit -m "add file c6"
+->touch c7.txt ->notepad c7.txt -> git add c7.txt -> git commit -m "add file c7"
+->touch c8.txt ->notepad c8.txt -> git add c8.txt -> git commit -m "add file c8"
+2. Viết lệnh thực hiện gộp nhánh bug vào nhánh feature sử dụng git merge
+->git checkout feature->git merge bug 
+3. Viết lệnh thực hiện gộp nhánh feature vào bug sử dụng git rebase
+->git checkout feature->git rebase bug 
+4.Phân biệt git merge và git rebase(giống, khác nhau, khi nào nên sử dụng)
+->giống là đều gộp các nhánh lại nhau . Khac nhau là khi merge nó merge nó sẽ tạo 1 commit khi gop nhanh còn rebase nó k tạo nhanh mà nó gop thành đường thảng mà số lượng commit k thay đổi.nên dùng merge khi chúng ta chỉ xử lý conflict 1 lần còn  dùng rebase khi chung ta k muốn tạo thêm 1 commit để làm xấu lich sử trên github
+5. Phân biệt git fetch và git clone
+->git clone khi mà minh lấy source code lần đầu tiên về máy . git fetch khi mà tôi muốn cập nhập source mới nhât
+6.Phân biệt git fetch và git pull
+->git fetch là chỉ lấy code chưa có merge . còn git pull là fetch + merge
+7.Phân biệt git pull và git pull --rebase
+-> git pull =fetch   + merge . git pull --rebase = fetch   + rebase
+8. Git log dùng để làm gì
+-> dùng để xem tên người comit  , ngày commit , tên cac  commit ,branch 
+9. Git status dùng để làm gì
+->xem trạng thái cac 
