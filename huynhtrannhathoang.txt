@@ -48,6 +48,16 @@
 19. Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
 -untracked ,modified ,unmodified,stages
 -untracked : khi mà ta khỏi tạo chưa lm gi hết 
--modified
--unmodified
+-modified : khi mà ta commit thành công
+-unmodified: khi ta sửa 1 file hay xóa file hay thay đổi gì đó
 -stages :mà ta git add thì nó dưa vào stages
+20. Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
+->đưa dự án đó từ remote về local
+->tạo nhánh local từ 1 task đang làm 
+-> coding, add, commit 
+
+-ví dụ 
+nhận 1 task làm chức năng crud thông tin sản phẩm về đồng hồ
+-bước 1 : clone tu remote xuong local 
+-buoc 2 : tạo nhánh từ task đó 
+-buoc 3 : lấy nhánh đó  coding ,add, 
