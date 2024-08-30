@@ -73,9 +73,11 @@ git commit -m "Add file c8"
 
 13. Mô tả lệnh để xóa branch ở local
    git branch -d tennhanh 
+   xóa nhánh ở local nhưng HEAD không được trỏ đến nhánh đó 
 
 14. Mô tả lệnh để xóa branch ở remote
    git push tennhanh -d
+   xóa nhánh ở remote
 
 15. Nhánh trung gian là gì
    là nhánh chứa tất cả các commit được lấy từ remote về
