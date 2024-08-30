@@ -3,9 +3,10 @@ git init
 touch c1.txt-> notepad c1.txt-> git add . -> git commit
 touch c2.txt-> notepad c2.txt-> git add . -> git commit
 touch c3.txt-> notepad c3.txt-> git add . -> git commit
+git checkout -b feature master
 touch c4.txt-> notepad c4.txt-> git add . -> git commit
 touch c5.txt-> notepad c5.txt-> git add . -> git commit
-git checkout bug
+git checkout -b bug master
 touch c6.txt-> notepad c6.txt-> git add . -> git commit
 touch c7.txt-> notepad c7.txt-> git add . -> git commit
 touch c8.txt-> notepad c8.txt-> git add . -> git commit
@@ -25,9 +26,9 @@ câu 6 Phân biệt git fetch và git pull:
 - git pull là lấy từ remove về local
 câu 7 Phân biệt git pull và git pull --rebase: 
 - git pull là lấy từ remove về local
-- git pull --rebase vừa lay code về local,vừa thực hiện lệnh git rabase
+- git pull --rebase vừa lay code về local,vừa thực hiện lệnh git rebase
 câu 8: git log dùng để làm gì
-- git log dùng để xem những commit
+- git log dùng để xem những commit đã commit
 câu 9: Git status dùng để làm gì
 -git status dùng để xem trạng thái
 câu 10: Git add dùng để làm gì
@@ -39,13 +40,13 @@ câu 12: Mô tả lệnh để tạo branch ở local
 câu 13: Mô tả lệnh để xóa branch ở local
 - git branch -d
 câu 14: Mô tả lệnh để xóa branch ở remote
-- git push origin removeBranch -d
+- git push origin remove/Branch -d
 câu 15: Nhánh trung gian là gì
 -là một nhánh đại diện cho từng version riêng biệt 
 câu 16: Detach HEAD là gì
 -là tên của nhánh hiện lại
 câu 17: Phân biệt HEAD và BRANCH
--là tên của nhánh hiện lại  để commit
+-HEAD là tên của nhánh hiện Tại dùng để commit
 -branch không thể trỏ sang commit khác
 câu 18: Có mấy cách để xóa commit, mô tả và cho ví dụ
 có 2 cách xóa commit
@@ -56,7 +57,6 @@ câu 19: Liệt kê các trạng thái của file trong git, giải thích từn
 -unmonifile:là trạng thái đã có chỉnh sửa trong file(Không được phép commit)
 -stage     : ta đã git add .
 -modifile  : khi đã commit
-
 câu 20 Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
 -git clone dự án về
 -xem yêu cầu dự án
