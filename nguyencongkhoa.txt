@@ -1,0 +1,123 @@
+1.Viết chương trình/lệnh mô tả các bước thực hiện sơ đồ git tree sau đây ở local repository
+git init
+------------
+touch c1.txt
+notepad c1.txt
+git add .
+git commit "Add file c1"
+
+touch c2.txt
+notepad c2.txt
+git add .
+git commit "Add file c2"
+
+touch c3.txt
+notepad c3.txt
+git add .
+git commit "Add file c3"
+-----------
+git checkout -b feature master
+
+touch c4.txt
+notepad c4.txt
+git add .
+git commit "Add file c4"
+
+touch c5.txt
+notepad c5.txt
+git add .
+git commit "Add file c5"
+-----------
+git checkout -b bug master
+
+touch c6.txt
+notepad c6.txt
+git add .
+git commit "Add file c6"
+
+touch c7.txt
+notepad c7.txt
+git add .
+git commit "Add file c7"
+
+touch c8.txt
+notepad c8.txt
+git add .
+git commit "Add file c8"
+
+2. Viết lệnh thực hiện gộp nhánh bug vào nhánh feature sử dụng git merge
+git checkout feature
+git merge bug
+
+3. Viết lệnh thực hiện gộp nhánh feature vào bug sử dụng git rebase
+git checkout feature
+git rebase bug
+
+4. Phân biệt git merge và git rebase(giống, khác nhau, khi nào nên sử dụng)
+Giống: 
+- Đều là gộp các commit mà branches đang trỏ đến lại với nhau thành commit mới có cùng chung commit cha
+- Đều có gộp fast-forward và rẽ nhánh và có thể bị conflict
+Khác:
+*merge: gộp các nhánh lại với nhau tạo 1 commit mới có cùng cha chung
+*rebase: lấy nhánh hiện tại cần gộp đưa lên top của nhánh gộp
+Use:
+*merge:
+*rebase: khi push code lên GitHub để cho đẹp mắt và dễ quản lý thời gian theo thứ tự push, dễ dàng truy vấn lại
+
+5. Phân biệt git fetch và git clone
+git clone: lấy dự án về máy
+git fetch: đồng bộ các commit... đã được push lên về máy để dùng
+
+6. Phân biệt git fetch và git pull
+
+7. Phân biệt git pull và git pull --rebase
+
+
+8. Git log dùng để làm gì
+Git log dùng để xem Author và Date push lên, xem đầy đủ mã hash của commit và thông tin đầy đủ từng commit
+
+9. Git status dùng để làm gì
+Git status dùng để xem trạng thái của file, folder như untracked, modifield, staged để người dùng hiểu cần làm gì để commit hoặc thao tác file đó ...
+
+10. Git add dùng để làm gì
+Git add dùng để thêm file, folder ... từ trạng thái untracked... đưa vào staged để tiến hành commit
+
+11. Git commit dùng để làm gì
+Git commit dùng để đưa các file, folder đã được add vào trạng thái staged, lưu trữ lại sau này có thể checkout về để sử dụng ....
+
+12. Mô tả lệnh để tạo branch ở local
+git branch new_branch
+
+13. Mô tả lệnh để xóa branch ở local
+git branch -d branch_can_xoa
+
+14. Mô tả lệnh để xóa branch ở remote
+git push origin ten_branch_can_xoa -d
+
+15. Nhánh trung gian là gì
+Nhánh trung gian là nhánh cầu nối giữa Remote và Local
+
+16. Detach HEAD là gì
+
+
+17. Phân biệt HEAD và BRANCH
+HEAD: trỏ đến commit hiện tại, chứa các file, folder ở thời điểm mới nhất, commit mới nhất
+BRANCH: là nhánh trỏ đến các commit cụ thể hoặc nhánh lưu lại version như todo-app-1.0. VD đang làm cái branch này nhưng gặp bug thì head trỏ đến chỗ khác, branch vẫn còn đó, sau khi fix bug xong có thể quay trở lại
+
+18. Có mấy cách để xóa commit, mô tả và cho ví dụ
+có 2 cách xóa commit
+git reset --soft HEAD~number: xóa nhưng còn ...
+git reset --hard HEAD~number: xóa hẳn file, folder
+
+19. Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
+Untracked: trạng thái khi tạo file, folder chưa đưa vào commit, lúc này chưa thể commit
+Staged: khi đã add file, folder. Có thể tiến hành commit, có thể đi ra từ trạng thái modified, unmodified
+modified:
+unmodified:
+
+20. Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
+xem dự án đó thuộc version nào
+clone dự án về khi chưa có trên máy
+tiến hành update version dự án
+tiến hành code, commit, push dự án...
+Vd nhận task làm mul.txt ở version 1.0
