@@ -106,6 +106,14 @@ git commit -m "Add file c8"
    b1: xác định task đó thuộc version nào 
    b2: xác định task đó thuộc branch nào 
    b3: clone(fetch) và tạo nhánh mới từ branch của task
-   b4: code-add-commit-push
+   b4: code-add-commit
    nếu bị rejected thì git pull --rebase rồi push lên lại
-vd: 
+   b5: push code lên remote
+vd: task đó thuộc version 1.0 của dự án
+    task đó thuộc nhánh todo-app-1.0
+    git clone link về
+    git branch t1 origin/todo-app-1.0
+    tạo file mới code và commit 
+    push code lên remote bằng lệnh : git push origin t1:todo-app-1.0
+
+
