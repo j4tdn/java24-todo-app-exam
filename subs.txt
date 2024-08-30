@@ -1,3 +1,0 @@
-private int subs(int a ... int n){
-   return a -....-n;
-}
