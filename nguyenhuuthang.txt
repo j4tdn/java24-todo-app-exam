@@ -49,4 +49,12 @@ B2:	git rebase feature
 11. Git commit dùng để làm gì
 - git commit dùng để hoàn tất trạng thái thay đổi của file, từ stage
 
+12. Mô tả lệnh để tạo branch ở local
+	git branch -m Nhanh
 
+13. Mô tả lệnh để xóa branch ở local
+	git branch Name-branch -d
+
+14. Mô tả lệnh để xóa branch ở remote
+
+	git push origin name-local:name-remote -d
