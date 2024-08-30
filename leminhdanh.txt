@@ -88,14 +88,18 @@ git commit -m "Add file c8"
 18. Có mấy cách để xóa commit, mô tả và cho ví dụ
   có 2 cách:
    + git reset --soft HEAD~i
-   xóa i commit mà HEAD đang trỏ đến nội dung thay đổi sẽ lưu lại
+   xóa i commit mà HEAD đang trỏ đến branch đó theo thứ tự, nội dung thay đổi của commit đó sẽ lưu lại
+   vd: git reset --soft HEAD~2 sẽ xóa 2 commit gần nhất, nội dung của commit mới nhất sẽ được lưu lại
+
    + git reset --hard HEAD~i
-   xóa i commit mà HEAD đang trỏ đến nội dung thay đổi sẽ không lưu lại
+   xóa i commit mà HEAD đang trỏ đến branch đó theo thứ tự, nội dung thay đổi của commit đó sẽ không lưu lại
+   vd: git reset --hard HEAD~2 sẽ xóa 2 commit gần nhất
+   
 
 19. Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
    untracked : file vừa mới tạo và chưa từng commit
-   modified  : file đã commit và đang được sửa đổi
-   unmodified: file đã commit
+   modified  : file đã từng commit và đang được sửa đổi
+   unmodified: file đã commit và chưa được sửa đổi
    staged    : file đã sẵng sàng commit
 
 20. Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
@@ -104,3 +108,4 @@ git commit -m "Add file c8"
    b3: clone(fetch) và tạo nhánh mới từ branch của task
    b4: code-add-commit-push
    nếu bị rejected thì git pull --rebase rồi push lên lại
+vd: 
