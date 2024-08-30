@@ -23,4 +23,31 @@
 8. Git log dùng để làm gì
 -> dùng để xem tên người comit  , ngày commit , tên cac  commit ,branch 
 9. Git status dùng để làm gì
-->xem trạng thái cac 
+->xem trạng thái cac file có  đang thay đổi  hay không ?
+10. Git add dùng để làm gì
+- dùng để add 1 file hoặc nhiều vào stages
+11.Git commit dùng để làm gì?
+-dùng để ghi chú 1 chức năng hay fix lỗi nào đó
+12. Mô tả lệnh để tạo branch ở local
+->git branch ten_nhanh
+13 Mô tả lệnh để xóa branch ở local
+->git branch ten_nhanh -D
+14. Mô tả lệnh để xóa branch ở remote
+->git push origin remoteBranch -d
+15. Nhánh trung gian là gì
+->khi mà ta fetch source code tu github ve local thì nhánh remote nó sẽ được chuyển xuống dưới local thông qua 1 nhánh gọi là nhánh trung gian
+16. Detach HEAD là gì
+17. Phân biệt HEAD và BRANCH
+->HEAD có thể trỏ sang commit , branch .còn branch không thể trỏ sang commit khac được
+18. Có mấy cách để xóa commit, mô tả và cho ví dụ
+->có 2 cách để xóa commit . Đó là xóa mềm và xóa cứng .Xóa mềm chỉ xóa tên commit  đó thôi nội dung vẫn còn ,xóa cứng là xóa tên commit và nội dung là mất hết
+-> Ví dụ 
+- 1 cai file  c1.txt với nôi dung hello khi commit xong
+-nếu dùng lệnh git reset --soft tên_commit thì  nó sẽ xóa tên commit 
+-nếu dùng lệnh git reset --hard tên_commit thì  nó sẽ xóa nội tên commit  và nội dung commit 
+19. Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
+-untracked ,modified ,unmodified,stages
+-untracked : khi mà ta khỏi tạo chưa lm gi hết 
+-modified
+-unmodified
+-stages :mà ta git add thì nó dưa vào stages
