@@ -70,8 +70,9 @@ git fetch: đồng bộ các commit... đã được push lên về máy để d
 
 6. Phân biệt git fetch và git pull
 
-7. Phân biệt git pull và git pull --rebase
 
+7. Phân biệt git pull và git pull --rebase
+git pull --rebase là 
 
 8. Git log dùng để làm gì
 Git log dùng để xem Author và Date push lên, xem đầy đủ mã hash của commit và thông tin đầy đủ từng commit
@@ -95,7 +96,7 @@ git branch -d branch_can_xoa
 git push origin ten_branch_can_xoa -d
 
 15. Nhánh trung gian là gì
-Nhánh trung gian là nhánh cầu nối giữa Remote và Local
+Nhánh trung gian là nhánh cầu nối giữa Remote và Local cho việc push code và fetch code
 
 16. Detach HEAD là gì
 
@@ -108,12 +109,14 @@ BRANCH: là nhánh trỏ đến các commit cụ thể hoặc nhánh lưu lại 
 có 2 cách xóa commit
 git reset --soft HEAD~number: xóa nhưng còn ...
 git reset --hard HEAD~number: xóa hẳn file, folder
+*number số lượng commit tính từ commit con hiện  tại trở về trước
 
 19. Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
 Untracked: trạng thái khi tạo file, folder chưa đưa vào commit, lúc này chưa thể commit
 Staged: khi đã add file, folder. Có thể tiến hành commit, có thể đi ra từ trạng thái modified, unmodified
-modified:
-unmodified:
+modified: khi đã add vào trạng thái staged nhưng chưa commit, sửa thay đổi file đó thì nó sẽ vào trạnh thái modifield
+unmodified: 
+both modifiled: trường hợp file đã add và đưa vào commit, nhưng lại sửa thay đổi file đó
 
 20. Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
 xem dự án đó thuộc version nào
