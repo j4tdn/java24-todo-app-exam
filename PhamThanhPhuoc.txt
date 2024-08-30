@@ -1,0 +1,72 @@
+câu 1:
+git init
+touch c1.txt-> notepad c1.txt-> git add . -> git commit
+touch c2.txt-> notepad c2.txt-> git add . -> git commit
+touch c3.txt-> notepad c3.txt-> git add . -> git commit
+touch c4.txt-> notepad c4.txt-> git add . -> git commit
+touch c5.txt-> notepad c5.txt-> git add . -> git commit
+git checkout bug
+touch c6.txt-> notepad c6.txt-> git add . -> git commit
+touch c7.txt-> notepad c7.txt-> git add . -> git commit
+touch c8.txt-> notepad c8.txt-> git add . -> git commit
+2. Viết lệnh thực hiện gộp nhánh bug vào nhánh feature sử dụng git merge
+- git fetch                               
+- git merge origin/[Tên nhánh trên remove]
+3. Viết lệnh thực hiện gộp nhánh feature vào bug sử dụng git rebase
+-git checkout feature  -> git rebase bug
+câu 4 Phân biệt git merge và git rebase(giống, khác nhau, khi nào nên sử dụng): 
+- lệnh git merge gộp 2 nhánh lại và tạo thanh nhánh mới
+- Lệnh git rebase tạo nhánh mới xóa những nhánh cũ chức năng vẫn như nhánh cũ
+câu 5 Phân biệt git fetch và git clone: 
+- git clone dùng để lấy code từ GitHub về
+- git fetch dùng để đồng bộ các git trong local
+câu 6 Phân biệt git fetch và git pull: 
+- git fetch dùng để đồng bộ các git trong local
+- git pull là lấy từ remove về local
+câu 7 Phân biệt git pull và git pull --rebase: 
+- git pull là lấy từ remove về local
+- git pull --rebase vừa lay code về local,vừa thực hiện lệnh git rabase
+câu 8: git log dùng để làm gì
+- git log dùng để xem những commit
+câu 9: Git status dùng để làm gì
+-git status dùng để xem trạng thái
+câu 10: Git add dùng để làm gì
+-git add . dùng để xác nhận những thay  đổi của 1 hoặc nhiều file trước khi commit
+câu 11: Git commit dùng để làm gì
+-dùng để lưu lại trước khi push lên remove
+câu 12: Mô tả lệnh để tạo branch ở local
+-git branch Tên Nhánh
+câu 13: Mô tả lệnh để xóa branch ở local
+- git branch -d
+câu 14: Mô tả lệnh để xóa branch ở remote
+- git push origin removeBranch -d
+câu 15: Nhánh trung gian là gì
+-là một nhánh đại diện cho từng version riêng biệt 
+câu 16: Detach HEAD là gì
+-là tên của nhánh hiện lại
+câu 17: Phân biệt HEAD và BRANCH
+-là tên của nhánh hiện lại  để commit
+-branch không thể trỏ sang commit khác
+câu 18: Có mấy cách để xóa commit, mô tả và cho ví dụ
+có 2 cách xóa commit
+-git reset --soft (tên commit)
+-git reset --hart (Tên commit)
+câu 19: Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
+-untrackke :khi file chưa làm gì hết
+-unmonifile:là trạng thái đã có chỉnh sửa trong file(Không được phép commit)
+-stage     : ta đã git add .
+-modifile  : khi đã commit
+
+câu 20 Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
+-git clone dự án về
+-xem yêu cầu dự án
+-vd Tìm max 3 số nguyên : max3.txt
+ + cd scr
+ + touch max3.txt
+ + notepad max3.txt
+ + cd ../
+ + git add .
+ + git commit -m "Update-max3"
+ + git pull --rebase origin todo-app-5.0
+ + git push origin HEAD:todo-app-5.0
+
