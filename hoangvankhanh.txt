@@ -1,0 +1,130 @@
+1. Viết chương trình/lệnh mô tả các bước thực hiện sơ đồ git tree sau đây ở local repository
+git init
+touch c1.txt
+git add c1.txt
+git commit -m"c1"
+
+touch c2.txt
+git add c2.txt
+git commit -m"c2"
+
+touch c3.txt
+git add c3.txt
+git commit -m"c3"
+
+git checkout -b feature master
+touch c4.txt
+git add c4.txt
+git commit -m"c4"
+
+touch c5.txt
+git add c5.txt
+git commit -m"c5"
+
+git checkout -b bug master
+touch c6.txt
+git add c6.txt
+git commit -m"c6"
+
+touch c7.txt
+git add c7.txt
+git commit -m"c7"
+
+touch c8.txt
+git add c8.txt
+git commit -m"c8"
+
+2. Viết lệnh thực hiện gộp nhánh bug vào nhánh feature sử dụng git merge
+   git checkout feature
+   git merge bug
+
+3. Viết lệnh thực hiện gộp nhánh feature vào bug sử dụng git rebase
+   git checkout bug 
+   git rebase feature
+
+4. Phân biệt git merge và git rebase(giống, khác nhau, khi nào nên sử dụng)
+*Giống:
+-đều gộp 2 nhánh
+-đều có thể bị confict
+-đều có 2 trường hợp gộp(trên cùng 1 đường thẳng , rẽ ra 2 hướng khác nhau) 
+
+*Khác:
+-merge: sau khi gộp xong thì xuất hiện commit merge
+-rebase: sau khi nộp xong không suất hiện commit gộp, các mã hash của commit gộp vào thay đổi 
+
+*Sử dụng merge khi không muốn thay đổi mã hash của các commit cha, muốn tạo ra commit gộp
+*Sử dụng rebase khi muốn thay đổi mã hash của các commit cha, không muốn tạo ra commit gộp
+
+5. Phân biệt git fetch và git clone
+git fetch: khi đã có 1 local mô đó ánh xạ remote mô đó đã liên kết với nhau. fetch lấy tất cả các nhánh trung gian ở trên xong fetch về nhánh trung gian của local demo. 2 repo phải liên kết với nhau.
+
+git clone: khi trên máy của mình mà máy mình mới hoàn toàn chưa có chi hết, lúc đó mình clone về. tức là lấy hết về máy mình lúc đó trở thành local demo của máy mình xong làm tiếp
+
+6. Phân biệt git fetch và git pull
+git fetch:  khi đã có 1 local mô đó ánh xạ remote mô đó đã liên kết với nhau. fetch lấy tất cả các nhánh trung gian ở trên xong fetch về nhánh trung gian của local demo. 2 repo phải liên kết với nhau.
+git pull: pull luôn luôn có chức năng của fetch và pull có thêm chức năng merge
+          pull = merge + fetch
+
+7. Phân biệt git pull và git pull --rebase
+   git pull = fetch + merge
+   git pull --rebase = fetch + rebase
+
+8. Git log dùng để làm gì
+   Xem tại tất cả commit 
+
+9. Git status dùng để làm gì
+   Xem lại tình trạng , trạng thái của các file như thế nào 
+
+10. Git add dùng để làm gì
+   Dùng để đưa các file từ untracked, modified sang staged
+
+11. Git commit dùng để làm gì
+   Dùng để commit file vừa add , đưa file từ staged sang unmodified
+
+12. Mô tả lệnh để tạo branch ở local
+    *cú pháp: 
+tạo thêm một nhánh từ một nhánh đã có: git branch tennhanhmoi tennhanhdaco
+tạo thêm một nhánh từ một mã hash của commit : git branch tennhanhmoi mahash 
+
+13. Mô tả lệnh để xóa branch ở local
+    *cú pháp:
+git branch -d tennhanhcanxoa: xóa được các nhánh mà các commit của nhánh đó có nhánh khác quản lí đến. không xóa được các nhánh mà commit của nhánh đó nỏ có nhánh mô quản lí .
+git branch -D tennhanhcanxoa: xóa bay luôn nhánh
+
+14. Mô tả lệnh để xóa branch ở remote
+    *cú pháp:
+git push origin tennhanhoremote -d
+
+15. Nhánh trung gian là gì
+    Nhánh trung gian là nhánh dùng để chứa, đồng bộ code mới nhất từ nhánh ở remote
+16. Detach HEAD là gì
+   
+17. Phân biệt HEAD và BRANCH
+-HEAD là con trỏ có thể trỏ đến commit hoặc branch 
+-Branch là nhánh trỏ đến commit
+
+18. Có mấy cách để xóa commit, mô tả và cho ví dụ
+git reset --hard HEAD~~: n commit từ head về trước dc xóa
+
+
+19. Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
+untracked: mới tạo, k ai quản lý cả 
+unmodified:có quản lý của branch
+modified:
+staged:
+ 
+20. Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
+ b1: xem task đó thuộc version nào của dự án
+ b2:biết được remote branch code cho task đó
+ b3:lấy code mới nhất của branch đó về
+   git fetch 
+   đồng bộ code mới nhất từ các nhánh ở remote về nhánh trugn gian 
+ b4:tạo nhánh mới lại local  từ remote branch phía trên, đưa head tới nhánh mới tạo, thựa hiện chức năng sau đó 
+ b5: push .
+ví dụ:
+sau khi xem thuộc version 1, biết branch 1.0 code task01
+git fetch
+git branch task01:origin/1.0
+git  checkout task01
+thực hiện chức năng
+git push origin task01:1.0
