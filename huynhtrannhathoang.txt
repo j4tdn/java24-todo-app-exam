@@ -57,7 +57,7 @@
 -> coding, add, commit 
 
 -ví dụ 
-nhận 1 task làm chức năng crud thông tin sản phẩm về đồng hồ
+nhận 1 task làm chức năng crud về sản phẩm
 -bước 1 : clone tu remote xuong local 
 -buoc 2 : tạo nhánh từ task đó 
 -buoc 3 : lấy nhánh đó  coding ,add, 
