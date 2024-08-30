@@ -1,0 +1,94 @@
+1. Viết chương trình/lệnh mô tả các bước thực hiện sơ đồ git tree sau đây ở local repository
+```
+git checkout master
+git pull
+git commit -m "commit 1"
+git commit -m "commit 2"
+git commit -m "commit 3"
+git checkout -b feature
+git commit -m "commit 4"
+git commit -m "commit 5"
+git checkout master
+git checkout -b bug
+git commit -m "commit 6"
+git commit -m "commit 7"
+git commit -m "commit 8"
+```
+
+2. Viết lệnh thực hiện gộp nhánh bug vào nhánh feature sử dụng git merge
+```
+git checkout feature
+git merge bug
+```
+
+3. Viết lệnh thực hiện gộp nhánh feature vào bug sử dụng git rebase
+```
+git checkout bug
+git rebase feature
+```
+
+4. Phân biệt git merge và git rebase(giống, khác nhau, khi nào nên sử dụng)
+Giống:
+* Để hợp nhất sự thay đổi từ hai nhánh khác nhau
+Khác:
+* `merge` giữ nguyên commit graph, `rebase` thì không
+Khi nào nên sử dụng
+* `merge` nên dùng khi tạo Pull request từ `feat` vào `main`
+* `rebase` nên dùng tại local trước khi tạo pull request
+
+5. Phân biệt git fetch và git clone
+`git fetch` dùng để tải xuống commit mới từ remote xuống remote branch
+`git clone` dùng để tải xuống một repository mới từ remote
+
+6. Phân biệt git fetch và git pull
+`git fetch` dùng để tải xuống commit mới tử remote
+`git pull`, theo mặc định là sự kết hợp của `git fetch` và `git merge`, dùng để tảỉ commit từ remote branch xuống local branch.
+
+7. Phân biệt git pull và git pull --rebase
+`git pull`  = `git fetch` + `git merge origin/<<remote tracking branch>>`
+`git pull --rebase`  = `git fetch` + `git rebase origin/<<remote tracking branch>>`
+
+8. Git log dùng để làm gì
+để xem lịch sử commit của branch
+
+9. Git status dùng để làm gì
+để xem trạng thái của files: deleted, modified, moved, untracked, staged
+
+10. Git add dùng để làm gì
+để chuẩn bị files để commit - thay đổi trạng thái sang staged (will be committed)
+
+11. Git commit dùng để làm gì
+Lưu sự thay đổi của các files trong staged thành một commit mới
+
+12. Mô tả lệnh để tạo branch ở local
+git checkout -b <<branch-name>>
+
+13. Mô tả lệnh để xóa branch ở local
+
+git branch -d <<branch-name>>
+
+14. Mô tả lệnh để xóa branch ở remote
+
+16. Detach HEAD là gì
+khi không  checkout vào một branch mà checkout vào một commit hoặc tag
+
+17. Phân biệt HEAD và BRANCH
+HEAD: trỏ đến commit đang làm việc
+BRANCH: trỏ đến commit cụ thể trong repos
+
+18. Có mấy cách để xóa commit, mô tả và cho ví dụ
+`git reset` + `git push -f`: Xóa commit khỏi graph
+`git revert` + `git push`: Tạo một commit mới hoàn nguyên lại trạng thái trước đó
+
+git branch -d <<remote-name>> <<branch-name>>
+i.e. git branch -d origin feat/1
+
+19. Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
+untracked: file chưa tracked (theo dõi)
+deleted: file đã tracked bị xóa
+modified: file đã tracked bị thay đổi
+moved: file đã tracked bị di chuyển
+staged: file chuẩn bị đc commit
+
+20. Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
+....
