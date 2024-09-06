@@ -1,0 +1,6 @@
+1. Viết chương trình/lệnh mô tả các bước thực hiện sơ đồ git tree sau đây ở local repository
+- tạo folder ..
+- git init ...
+- ....
+
+
