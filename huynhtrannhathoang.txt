@@ -8,49 +8,77 @@
 ->touch c6.txt ->notepad c6.txt -> git add c6.txt -> git commit -m "add file c6"
 ->touch c7.txt ->notepad c7.txt -> git add c7.txt -> git commit -m "add file c7"
 ->touch c8.txt ->notepad c8.txt -> git add c8.txt -> git commit -m "add file c8"
+==> Hoàng làm thế này thì nó sẽ tạo đủ 8 commits từ C1 -> C8 và được quản lý bởi nhánh master, chưa đúng với yêu cầu đề bài
+==> Sai 0đ
 2. Viết lệnh thực hiện gộp nhánh bug vào nhánh feature sử dụng git merge
-->git checkout feature->git merge bug 
+->git checkout feature->git merge bug
+==> Đúng 4đ
 3. Viết lệnh thực hiện gộp nhánh feature vào bug sử dụng git rebase
-->git checkout feature->git rebase bug 
+->git checkout feature->git rebase bug
+==> Sai 0đ
+==> Gộp vào nhánh nào, checkout HEAD về nhánh đó
 4.Phân biệt git merge và git rebase(giống, khác nhau, khi nào nên sử dụng)
 ->giống là đều gộp các nhánh lại nhau . Khac nhau là khi merge nó merge nó sẽ tạo 1 commit khi gop nhanh còn rebase nó k tạo nhanh mà nó gop thành đường thảng mà số lượng commit k thay đổi.nên dùng merge khi chúng ta chỉ xử lý conflict 1 lần còn  dùng rebase khi chung ta k muốn tạo thêm 1 commit để làm xấu lich sử trên github
+==> Đúng(chưa hoàn chỉnh) 2đ
+==> Xem thêm ở https://docs.google.com/document/d/10kU8PTbwAn9u_GuJitIstCJTnMKIY9B9/edit giúp a
 5. Phân biệt git fetch và git clone
 ->git clone khi mà minh lấy source code lần đầu tiên về máy . git fetch khi mà tôi muốn cập nhập source mới nhât
+==> Đúng(chưa hoàn chỉnh): 3đ
+==> Quan trọng em phải hiểu là clone khi local chưa có gì, lấy toàn bộ trên remote xuống
+==> fetch là khi local repo đã mapping với remote repo, fetch để đồng bộ code mới nhất của remote về local
 6.Phân biệt git fetch và git pull
 ->git fetch là chỉ lấy code chưa có merge . còn git pull là fetch + merge
+==> Đúng 4đ
 7.Phân biệt git pull và git pull --rebase
 -> git pull =fetch   + merge . git pull --rebase = fetch   + rebase
+==> Đúng 4đ
 8. Git log dùng để làm gì
 -> dùng để xem tên người comit  , ngày commit , tên cac  commit ,branch 
+==> Đúng(chưa hoàn chỉnh): 2đ
 9. Git status dùng để làm gì
 ->xem trạng thái cac file có  đang thay đổi  hay không ?
+==> Xem danh sách các file đang ở trạng thái(untracked, modified, staged)
+==> Đúng(chưa hoàng chỉnh): 2đ
 10. Git add dùng để làm gì
 - dùng để add 1 file hoặc nhiều vào stages
+==> Đúng 4đ
 11.Git commit dùng để làm gì?
 -dùng để ghi chú 1 chức năng hay fix lỗi nào đó
+==> Dùng để lưu lại 1 chức năng, 1 git version vào git repo
+==> Đúng 3đ
 12. Mô tả lệnh để tạo branch ở local
 ->git branch ten_nhanh
+==> Đúng 2đ
+==> git branch ten_nhanh thì nhánh mới sẽ luôn tạo từ HEAD, e phải mô tả đầy đủ tất cả các cú pháp
 13 Mô tả lệnh để xóa branch ở local
 ->git branch ten_nhanh -D
+==> Đúng 4đ
 14. Mô tả lệnh để xóa branch ở remote
 ->git push origin remoteBranch -d
+==> Đúng 4đ
 15. Nhánh trung gian là gì
 ->khi mà ta fetch source code tu github ve local thì nhánh remote nó sẽ được chuyển xuống dưới local thông qua 1 nhánh gọi là nhánh trung gian
+==> Đúng 4đ
 16. Detach HEAD là gì
+==> Là trạng thái khi HEAD trỏ trực tiếp đến commit
 17. Phân biệt HEAD và BRANCH
 ->HEAD có thể trỏ sang commit , branch .còn branch không thể trỏ sang commit khac được
+==> Branch thực tế vẫn có thể dịch chuyển được khi có HEAD đang trỏ đến branch đó xong mình tạo commit mới hoặc mình xóa commit bằng reset --soft hoặc --hard
+==> Đúng 3đ
 18. Có mấy cách để xóa commit, mô tả và cho ví dụ
 ->có 2 cách để xóa commit . Đó là xóa mềm và xóa cứng .Xóa mềm chỉ xóa tên commit  đó thôi nội dung vẫn còn ,xóa cứng là xóa tên commit và nội dung là mất hết
 -> Ví dụ 
 - 1 cai file  c1.txt với nôi dung hello khi commit xong
 -nếu dùng lệnh git reset --soft tên_commit thì  nó sẽ xóa tên commit 
 -nếu dùng lệnh git reset --hard tên_commit thì  nó sẽ xóa nội tên commit  và nội dung commit 
+==> Đúng 4đ
 19. Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
 -untracked ,modified ,unmodified,stages
 -untracked : khi mà ta khỏi tạo chưa lm gi hết 
--modified : khi mà ta commit thành công
--unmodified: khi ta sửa 1 file hay xóa file hay thay đổi gì đó
+-modified : khi mà ta commit thành công -> sai
+-unmodified: khi ta sửa 1 file hay xóa file hay thay đổi gì đó -> sai
 -stages :mà ta git add thì nó dưa vào stages
+==> 2đ
 20. Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
 ->đưa dự án đó từ remote về local
 ->tạo nhánh local từ 1 task đang làm 
@@ -61,3 +89,4 @@ nhận 1 task làm chức năng crud về sản phẩm
 -bước 1 : clone tu remote xuong local 
 -buoc 2 : tạo nhánh từ task đó 
 -buoc 3 : lấy nhánh đó  coding ,add, 
+==> Chưa chi tiết, có thể sai: 1đ
