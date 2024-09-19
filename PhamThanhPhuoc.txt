@@ -10,57 +10,115 @@ git checkout -b bug master
 touch c6.txt-> notepad c6.txt-> git add . -> git commit
 touch c7.txt-> notepad c7.txt-> git add . -> git commit
 touch c8.txt-> notepad c8.txt-> git add . -> git commit
+==> Đúng 4đ
+
 2. Viết lệnh thực hiện gộp nhánh bug vào nhánh feature sử dụng git merge
 - git fetch                               
 - git merge origin/[Tên nhánh trên remove]
+==> Sai 0đ
+==> A đang yêu cầu gộp nhánh bug vào feature thì cứ git checkout feature, git merge bug
+
 3. Viết lệnh thực hiện gộp nhánh feature vào bug sử dụng git rebase
 -git checkout feature  -> git rebase bug
+==> Sai 0đ
+==> Gộp feature vào bug, code lưu vào bug thì phải đưa HEAD về bug rồi merge bug vào feature
+==> Nhớ gộp vào nhánh nào thì đưa HEAD về nhánh đó
+
 câu 4 Phân biệt git merge và git rebase(giống, khác nhau, khi nào nên sử dụng): 
 - lệnh git merge gộp 2 nhánh lại và tạo thanh nhánh mới
 - Lệnh git rebase tạo nhánh mới xóa những nhánh cũ chức năng vẫn như nhánh cũ
+==> Chưa đúng lắm: 0đ
+==> Phần này quan trọng cố gắng hiểu, xem lại ở document này giúp a
+==> https://docs.google.com/document/d/10kU8PTbwAn9u_GuJitIstCJTnMKIY9B9/edit
+
 câu 5 Phân biệt git fetch và git clone: 
-- git clone dùng để lấy code từ GitHub về
+- git clone dùng để lấy code từ GitHub(chính xác là từ remote repository, ngoài github còn có nhiều remote server khác) về
 - git fetch dùng để đồng bộ các git trong local
+==> Chưa hoàn chỉnh, a cần câu trả lời liên quan đến fetch là đã có local và remote repo liên kết với nhau mới fetch được
+==> 2đ
+
 câu 6 Phân biệt git fetch và git pull: 
-- git fetch dùng để đồng bộ các git trong local
-- git pull là lấy từ remove về local
+- git fetch dùng để đồng bộ các git trong local, e phải nói là đồng bộ code từ remote về local vào các nhánh trung gian
+- git pull là lấy từ remove về local --> pull = fetch + merge
+==> Sai 1đ
+
 câu 7 Phân biệt git pull và git pull --rebase: 
-- git pull là lấy từ remove về local
+- git pull là lấy từ remote về local
 - git pull --rebase vừa lay code về local,vừa thực hiện lệnh git rebase
+==> Chưa gọi là đúng được: 2đ
+
 câu 8: git log dùng để làm gì
 - git log dùng để xem những commit đã commit
+==> Đúng(chưa hoàn chỉnh): 2đ
+==> git log sẽ hiện lịch sử commit hiện tại và các commit cha của nó, git log --all sẽ show tất cả commit đang có branch chứ ... và chi tiết hơn
+
 câu 9: Git status dùng để làm gì
--git status dùng để xem trạng thái
+-git status dùng để xem trạng thái(untracked, modified, staged)
+==> Tạm đúng: 3đ
+
 câu 10: Git add dùng để làm gì
 -git add . dùng để xác nhận những thay  đổi của 1 hoặc nhiều file trước khi commit
+==> Đúng 4đ(trả lời hay hơn thì sẽ nói là đưa các file từ untracked | modified vào staged)
+
 câu 11: Git commit dùng để làm gì
--dùng để lưu lại trước khi push lên remove
+-dùng để lưu lại trước khi push lên remove(em sai chính tả chữ này hơi nhiều)
+- remote: máy chủ từ xa
+- remove: xóa, loại bỏ
+==> Chưa hoàn chỉnh: 2đ
+==> Commit dùng để lưu lại code, thay đổi vào 1 phiên bản của git - lưu vào git local repo còn việc push hay không là tùy yêu cầu
+
 câu 12: Mô tả lệnh để tạo branch ở local
--git branch Tên Nhánh
+-git branch Tên Nhánh -> nhánh mới sẽ luôn tạo từ nơi mà HEAD đang trỏ đến
+--> git branch nhanhmoi nhanhcu
+--> git branch nhanhmoi hash_commit
+==> Chưa hoành chỉnh: 2đ
+
+
 câu 13: Mô tả lệnh để xóa branch ở local
 - git branch -d
+==> Sai 0đ(a đã hướng dẫn, nhớ xem lại)
+==> git branch -d tenhanh
+==> git branch -D tenhanh
+
 câu 14: Mô tả lệnh để xóa branch ở remote
-- git push origin remove/Branch -d
+- git push origin remote_branch -d
+==> Có nhớ lệnh nhưng cú pháp sai
+==> Tạm chấp nhận: 3đ
+
 câu 15: Nhánh trung gian là gì
--là một nhánh đại diện cho từng version riêng biệt 
+-là một nhánh đại diện cho từng version riêng biệt
+==> Sai 0đ
+
 câu 16: Detach HEAD là gì
 -là tên của nhánh hiện lại
+==> Sai 0đ
+
 câu 17: Phân biệt HEAD và BRANCH
 -HEAD là tên của nhánh hiện Tại dùng để commit
 -branch không thể trỏ sang commit khác
+==> Chưa đúng: 1đ
+
 câu 18: Có mấy cách để xóa commit, mô tả và cho ví dụ
 có 2 cách xóa commit
--git reset --soft (tên commit)
--git reset --hart (Tên commit)
+-git reset --soft HEAD~n
+-git reset --hard HEAD~n
+==> Sai 1đ
+
 câu 19: Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
--untrackke :khi file chưa làm gì hết
--unmonifile:là trạng thái đã có chỉnh sửa trong file(Không được phép commit)
+-untracked :khi file chưa làm gì hết
+-unmodified:là trạng thái sau khi file vừa commit xong
 -stage     : ta đã git add .
--modifile  : khi đã commit
+-modified  : sửa sau khi commit
+==> 2đ
+
 câu 20 Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
 -git clone dự án về
 -xem yêu cầu dự án
 -vd Tìm max 3 số nguyên : max3.txt
+ B1: kiểm tra xem task max3 thuộc version nào, version đó được code trên remote branch nào
+ VD: max3 thuộc version 5.0, version 5.0 được code trên nhánh todo-app-5.0
+ + git fetch hoặc clone nếu chưa có local repo
+ + git checkout -b task-max3 origin/todo-app-5.0
  + cd scr
  + touch max3.txt
  + notepad max3.txt
@@ -69,4 +127,5 @@ câu 20 Mô tả các bước cần thực hiện khi nhận 1 task từ dự á
  + git commit -m "Update-max3"
  + git pull --rebase origin todo-app-5.0
  + git push origin HEAD:todo-app-5.0
+==> Sai 0đ(vì sai bước đầu xem như sai nguyên bài dù các bước sau em làm đúng)
 
