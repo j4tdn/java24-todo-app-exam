@@ -2,7 +2,7 @@
 git init
 touch c1.txt
 git add c1.txt
-git commit -m"c1"
+git commit -m "c1" (cú pháp đúng, nhưng sau -m nên cách ra 1 space đúng chuẩn em hi)
 
 touch c2.txt
 git add c2.txt
@@ -33,14 +33,17 @@ git commit -m"c7"
 touch c8.txt
 git add c8.txt
 git commit -m"c8"
+==> Đúng 4đ
 
 2. Viết lệnh thực hiện gộp nhánh bug vào nhánh feature sử dụng git merge
    git checkout feature
    git merge bug
+==> Đúng 4đ
 
 3. Viết lệnh thực hiện gộp nhánh feature vào bug sử dụng git rebase
    git checkout bug 
    git rebase feature
+==> Đúng 4đ
 
 4. Phân biệt git merge và git rebase(giống, khác nhau, khi nào nên sử dụng)
 *Giống:
@@ -50,68 +53,90 @@ git commit -m"c8"
 
 *Khác:
 -merge: sau khi gộp xong thì xuất hiện commit merge
--rebase: sau khi nộp xong không suất hiện commit gộp, các mã hash của commit gộp vào thay đổi 
+-rebase: sau khi nộp xong không xuất hiện commit gộp, các mã hash của commit gộp vào thay đổi 
+==> Đến đây đúng: 3đ
 
 *Sử dụng merge khi không muốn thay đổi mã hash của các commit cha, muốn tạo ra commit gộp
 *Sử dụng rebase khi muốn thay đổi mã hash của các commit cha, không muốn tạo ra commit gộp
+==> 2 ý này sai
+==> Tham khảo thêm giúp a ở đây: https://docs.google.com/document/d/10kU8PTbwAn9u_GuJitIstCJTnMKIY9B9/edit
 
 5. Phân biệt git fetch và git clone
-git fetch: khi đã có 1 local mô đó ánh xạ remote mô đó đã liên kết với nhau. fetch lấy tất cả các nhánh trung gian ở trên xong fetch về nhánh trung gian của local demo. 2 repo phải liên kết với nhau.
+git fetch: khi đã có 1 local mô đó ánh xạ remote mô đó đã liên kết với nhau. fetch lấy tất cả các nhánh ở remote xong fetch về nhánh trung gian của local. 2 repo phải liên kết với nhau.
 
 git clone: khi trên máy của mình mà máy mình mới hoàn toàn chưa có chi hết, lúc đó mình clone về. tức là lấy hết về máy mình lúc đó trở thành local demo của máy mình xong làm tiếp
+==> Đúng(chưa hoàn chỉnh): 3đ
 
 6. Phân biệt git fetch và git pull
 git fetch:  khi đã có 1 local mô đó ánh xạ remote mô đó đã liên kết với nhau. fetch lấy tất cả các nhánh trung gian ở trên xong fetch về nhánh trung gian của local demo. 2 repo phải liên kết với nhau.
 git pull: pull luôn luôn có chức năng của fetch và pull có thêm chức năng merge
           pull = merge + fetch
+==> Đúng: 3đ vì giải thích fetch chưa đúng
 
 7. Phân biệt git pull và git pull --rebase
    git pull = fetch + merge
    git pull --rebase = fetch + rebase
+==> Đúng: 4đ
 
 8. Git log dùng để làm gì
-   Xem tại tất cả commit 
+   Xem tại tất cả commit, nếu nói xem tất cả commit thì ko đúng lắm
+==> git log: xem lịch sử commit hiện tại mà HEAD đang trỏ đến và các commit cha
+==> git log --all: xem lịch sử tất cả commit có branch trỏ đến, các commit ko có branch trỏ đến sẽ ko hiển thị
+==> Tạm: 2đ
 
 9. Git status dùng để làm gì
-   Xem lại tình trạng , trạng thái của các file như thế nào 
+   Xem lại tình trạng , trạng thái(untracked, staged, modified) của các file như thế nào 
+==> Đúng: 3đ
 
 10. Git add dùng để làm gì
    Dùng để đưa các file từ untracked, modified sang staged
+==> Đúng 4đ
 
 11. Git commit dùng để làm gì
    Dùng để commit file vừa add , đưa file từ staged sang unmodified
+==> Đúng: 3đ a cần biết thêm khi commit thì nó sẽ lưu lại 1 version vào repository
 
 12. Mô tả lệnh để tạo branch ở local
     *cú pháp: 
 tạo thêm một nhánh từ một nhánh đã có: git branch tennhanhmoi tennhanhdaco
 tạo thêm một nhánh từ một mã hash của commit : git branch tennhanhmoi mahash 
+==> Đúng: 4đ
 
 13. Mô tả lệnh để xóa branch ở local
     *cú pháp:
 git branch -d tennhanhcanxoa: xóa được các nhánh mà các commit của nhánh đó có nhánh khác quản lí đến. không xóa được các nhánh mà commit của nhánh đó nỏ có nhánh mô quản lí .
 git branch -D tennhanhcanxoa: xóa bay luôn nhánh
+==> Đúng: 4đ
 
 14. Mô tả lệnh để xóa branch ở remote
     *cú pháp:
 git push origin tennhanhoremote -d
+==> Đúng: 4đ
 
 15. Nhánh trung gian là gì
     Nhánh trung gian là nhánh dùng để chứa, đồng bộ code mới nhất từ nhánh ở remote
+==> Đúng: 4đ
+
 16. Detach HEAD là gì
+==> 0đ
+==> Là trạng thái khi HEAD trỏ trực tiếp đến commit ko thông qua branch
    
 17. Phân biệt HEAD và BRANCH
 -HEAD là con trỏ có thể trỏ đến commit hoặc branch 
 -Branch là nhánh trỏ đến commit
+==> Đúng(chưa hoàn chỉnh): 3đ A cần chi tiết hơn về nhảy nhánh khi nào, dùng lệnh gì
 
 18. Có mấy cách để xóa commit, mô tả và cho ví dụ
 git reset --hard HEAD~~: n commit từ head về trước dc xóa
-
+thiếu --soft
+==> 2đ
 
 19. Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
 untracked: mới tạo, k ai quản lý cả 
 unmodified:có quản lý của branch
 modified:
 staged:
+==> Tạm: 2đ
  
 20. Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
  b1: xem task đó thuộc version nào của dự án
@@ -124,7 +149,7 @@ staged:
 ví dụ:
 sau khi xem thuộc version 1, biết branch 1.0 code task01
 git fetch
-git branch task01:origin/1.0
+git branch task01 origin/1.0 --> sai luôn cả bài: 1đ
 git  checkout task01
 thực hiện chức năng
 git push origin task01:1.0
