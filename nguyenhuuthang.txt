@@ -1,4 +1,5 @@
 1. Viết chương trình/lệnh mô tả các bước thực hiện sơ đồ git tree sau đây ở local repository
+Thiếu git init: chấp nhận
  B1: touch c1.txt, git add . , git commit -m "message c1"
  B2: touch c2.txt, git add . , git commit -m "message c2"
  B3: touch c3.txt, git add . , git commit -m "message c3"
@@ -10,51 +11,75 @@
  git checkout bug
  B6: touch c6.txt, git add . , git commit -m "message c6"
  B7: touch c7.txt, git add . , git commit -m "message c7"
+==> Đúng: 4đ
 
 2.Viết lệnh thực hiện gộp nhánh bug vào nhánh feature sử dụng git merge
 
 B1:	git checkout feature
 B2:	git merge bug
+==> Đúng: 4đ
 
 3. Viết lệnh thực hiện gộp nhánh feature vào bug sử dụng git rebase
 
 B1:	git checkout bug
 B2:	git rebase feature
+==> Đúng: 4đ
 
 4. Phân biệt git merge và git rebase(giống, khác nhau, khi nào nên sử dụng)
-- giống: đều tạo ra commit mới, đều gộp được 2 nhánh với nhau
-- khác: + rebase: số commit tạo ra bằng số lượng commit xóa đi, có thể phải sử lý conflict nhiều lần
+- giống: đều tạo ra commit mới(tùy trường hợp, nếu trên 1 đường thẳng thì ...), đều gộp được 2 nhánh với nhau
+- khác: + rebase: số commit tạo ra bằng số lượng commit xóa đi, có thể phải xử lý conflict nhiều lần
 	+ merge: xử lý conflict 1 lần duy nhất, tạo ra 1 commit hoàn toàn mới
+==> Lý thuyết đúng, a cần ví dụ thực tế khi nào sử dụng merge, rebase
+==> Tham khảo thêm giúp a tại: https://docs.google.com/document/d/10kU8PTbwAn9u_GuJitIstCJTnMKIY9B9/edit
+==> 2đ
+
+
 5. Phân biệt git fetch và git clone
-- git fetch: khi trước đó máy cá nhân đã khởi tạo local_repo
+- git fetch: khi trước đó máy cá nhân đã khởi tạo local_repo và phải liên kết với remote repo
 - git clone: khi trước đó máy cá nhân hoàn toàn mới và chưa có local_repo 
+==> Thiếu: 3đ
 
 6. Phân biệt git fetch và git pull
 - git fetch: lấy về các commit hoặc branch ở remote_repo mà local_repo chưa có
-- git pull: lấy về các commit hoặc branch ở remote_repo mà local_repo chưa có và đồng thời merge branch
+- git pull: lấy về các commit hoặc branch ở remote_repo mà local_repo chưa có và đồng thời merge branch nào chưa có ví dụ
+==> Chưa rõ: 3đ
 
 7. Phân biệt git pull và git pull --rebase
 - git pull: mặc định nó sẽ lấy dữ liệu trên remote_repo và merge
 - git pull --rebase: khi này oftion lựa chọn chỉ rõ là rebase nên là nhánh mới và nhánh ở remote_repo sẽ gộp
+==> Ý pull --rebae chưa rõ: 3đ
 
 8. Git log dùng để làm gì
 - git log dùng để xem các commit trước đó
+==> git log: xem lịch sử commit hiện tại mà HEAD đang trỏ đến và các commit cha
+==> git log --all: xem lịch sử tất cả commit có branch trỏ đến, các commit ko có branch trỏ đến sẽ ko hiển thị
+==> Tạm: 2đ
 
 9. Git status dùng để làm gì
 - git status dùng để kiểm tra trạng thái của các file hoặc các sự thay đổi
+git status dùng để xem trạng thái(untracked, modified, staged) các file, ngoại trừ umodified
+==> Chưa hoàn chỉnh: 3đ
 
 10. Git add dùng để làm gì
 - git add dùng để đưa các unstrack, modifile.... vào trạng thái stage để sẵn sàng commit
+==> Đúng: 4đ
 
 11. Git commit dùng để làm gì
 - git commit dùng để hoàn tất trạng thái thay đổi của file, từ stage
+==> A cần chi tiết hơn
+==> Khi commit git sẽ làm gì
+==> Khi nào mình commit, commit những file nào
+==> 3đ
 
 12. Mô tả lệnh để tạo branch ở local
 	git branch -m Nhanh
+==> Sai: 0đ
 
 13. Mô tả lệnh để xóa branch ở local
 	git branch Name-branch -d
+==> Thiếu option -D và giải thích: 2đ
 
 14. Mô tả lệnh để xóa branch ở remote
 
-	git push origin name-local:name-remote -d
+	git push origin name-remote -d
+==> Sai: 0đ
