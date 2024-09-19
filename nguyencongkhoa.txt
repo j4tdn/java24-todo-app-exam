@@ -44,14 +44,17 @@ touch c8.txt
 notepad c8.txt
 git add .
 git commit "Add file c8"
+==> Đúng: 4đ
 
 2. Viết lệnh thực hiện gộp nhánh bug vào nhánh feature sử dụng git merge
 git checkout feature
 git merge bug
+==> Đúng: 4đ
 
 3. Viết lệnh thực hiện gộp nhánh feature vào bug sử dụng git rebase
-git checkout feature
-git rebase bug
+git checkout bug
+git rebase feature
+==> Sai: 0đ
 
 4. Phân biệt git merge và git rebase(giống, khác nhau, khi nào nên sử dụng)
 Giống: 
@@ -61,62 +64,86 @@ Khác:
 *merge: gộp các nhánh lại với nhau tạo 1 commit mới có cùng cha chung
 *rebase: lấy nhánh hiện tại cần gộp đưa lên top của nhánh gộp
 Use:
-*merge:
+*merge: khi gộp 2 branch của dự án ví dụ todo-app-1.0 vào todo-app-2.0
 *rebase: khi push code lên GitHub để cho đẹp mắt và dễ quản lý thời gian theo thứ tự push, dễ dàng truy vấn lại
+==> Phần quan trọng, tham khảo chi tiết thêm ở đây giúp a https://docs.google.com/document/d/10kU8PTbwAn9u_GuJitIstCJTnMKIY9B9/edit
+==> Đúng nhưng còn thiếu nhiều ý: 2đ
 
 5. Phân biệt git fetch và git clone
 git clone: lấy dự án về máy
 git fetch: đồng bộ các commit... đã được push lên về máy để dùng
+==> A cần ý quan trọng nhất, clone là khi lấy mới toàn bộ từ remote về local repo hoàn toàn mới
+==> fetch là khi đã có local và remote repo liên kết với nhau mới fetch
+==> 3đ
 
 6. Phân biệt git fetch và git pull
-
+==> 0đ
 
 7. Phân biệt git pull và git pull --rebase
-git pull --rebase là 
+git pull --rebase là
+==> 0đ
 
 8. Git log dùng để làm gì
 Git log dùng để xem Author và Date push lên, xem đầy đủ mã hash của commit và thông tin đầy đủ từng commit
+==> git log: xem lịch sử commit hiện tại mà HEAD đang trỏ đến và các commit cha
+==> git log --all: xem lịch sử tất cả commit có branch trỏ đến, các commit ko có branch trỏ đến sẽ ko hiển thị
+==> Chưa hoàn chỉnh: 2đ
 
 9. Git status dùng để làm gì
 Git status dùng để xem trạng thái của file, folder như untracked, modifield, staged để người dùng hiểu cần làm gì để commit hoặc thao tác file đó ...
+==> Đúng: 4đ
 
 10. Git add dùng để làm gì
-Git add dùng để thêm file, folder ... từ trạng thái untracked... đưa vào staged để tiến hành commit
+Git add dùng để thêm file, folder ... từ trạng thái untracked, modified... đưa vào staged để tiến hành commit
+==> Đúng: 4đ
 
 11. Git commit dùng để làm gì
 Git commit dùng để đưa các file, folder đã được add vào trạng thái staged, lưu trữ lại sau này có thể checkout về để sử dụng ....
+==> Đúng: 4đ
 
 12. Mô tả lệnh để tạo branch ở local
 git branch new_branch
+c2:git branch tennhanhmoi hash
+c3:git branch tennhanhmoi tennhanhcu
+c4:git checkout -b tennhanhmoi tennhanhcu
+==> Thiếu: 1đ
 
 13. Mô tả lệnh để xóa branch ở local
 git branch -d branch_can_xoa
+==> Thiếu option -D và giải thích: 2đ
 
 14. Mô tả lệnh để xóa branch ở remote
 git push origin ten_branch_can_xoa -d
+==> Đúng: 4đ
 
 15. Nhánh trung gian là gì
 Nhánh trung gian là nhánh cầu nối giữa Remote và Local cho việc push code và fetch code
+==> Đúng: 4đ
 
 16. Detach HEAD là gì
+==> Là trạng thái khi HEAD trỏ trực tiếp đến commit ko thông qua branch
 
 
 17. Phân biệt HEAD và BRANCH
 HEAD: trỏ đến commit hiện tại, chứa các file, folder ở thời điểm mới nhất, commit mới nhất
 BRANCH: là nhánh trỏ đến các commit cụ thể hoặc nhánh lưu lại version như todo-app-1.0. VD đang làm cái branch này nhưng gặp bug thì head trỏ đến chỗ khác, branch vẫn còn đó, sau khi fix bug xong có thể quay trở lại
+==> A cần chi tiết hơn dùng HEAD, BRANCH để làm gì, khi nào tạo branch, khi nào nhảy nhánh cú pháp thế nào
+==> Đúng(chưa hoàn chỉnh): 3đ
 
 18. Có mấy cách để xóa commit, mô tả và cho ví dụ
 có 2 cách xóa commit
 git reset --soft HEAD~number: xóa nhưng còn ...
 git reset --hard HEAD~number: xóa hẳn file, folder
 *number số lượng commit tính từ commit con hiện  tại trở về trước
+==> Đúng: 4đ
 
 19. Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
 Untracked: trạng thái khi tạo file, folder chưa đưa vào commit, lúc này chưa thể commit
-Staged: khi đã add file, folder. Có thể tiến hành commit, có thể đi ra từ trạng thái modified, unmodified
-modified: khi đã add vào trạng thái staged nhưng chưa commit, sửa thay đổi file đó thì nó sẽ vào trạnh thái modifield
+Staged: khi đã add file, folder. Có thể tiến hành commit, có thể đi ra từ trạng thái modified, untracked
+modified: khi đã add vào trạng thái staged nhưng chưa commit, sửa thay đổi file đó thì nó sẽ vào trạnh thái modifield, thiếu từ unmodfied edit cũng sẽ thành modified
 unmodified: 
 both modifiled: trường hợp file đã add và đưa vào commit, nhưng lại sửa thay đổi file đó
+==> Giải thích hơi rối: 2đ
 
 20. Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
 xem dự án đó thuộc version nào
@@ -124,3 +151,4 @@ clone dự án về khi chưa có trên máy
 tiến hành update version dự án
 tiến hành code, commit, push dự án...
 Vd nhận task làm mul.txt ở version 1.0
+==> Chưa rõ ràng chưa có ví dụ: 1đ
