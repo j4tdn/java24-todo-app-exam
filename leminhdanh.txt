@@ -26,66 +26,91 @@ git commit -m "Add file c7"
 touch C8.txt
 git add c8.txt
 git commit -m "Add file c8"
+==> Đúng: 4đ
 
 2. Viết lệnh thực hiện gộp nhánh bug vào nhánh feature sử dụng git merge
    git checkout feature
    git merge bug
+==> Đúng: 4đ
 
 3. Viết lệnh thực hiện gộp nhánh feature vào bug sử dụng git rebase
    git checkout bug
    git rebase feature
+==> Đúng: 4đ
 
 4. Phân biệt git merge và git rebase(giống, khác nhau, khi nào nên sử dụng)
    giống nhau: - gộp 1 nhánh vào nhánh khác
-	       - tạo ra commit mới
+	       - tạo ra commit mới(tùy merge trên 1 đường thẳng hay rẻ nhánh)
                - có thể bị conflict
    khác nhau: 
    + merge: - tạo commit merge        + rebase: - số commit không thay đổi
-            - chỉ bị conflict 1 lần            	- chỉ bị conflict 1 lần
+            - chỉ bị conflict 1 lần            	- chỉ bị conflict 1 lần(sai)
+==> Chưa hoành chỉnh: 2đ
 
 5. Phân biệt git fetch và git clone
-  git clone : coppy remote repo về local repo
-  git fetch : lấy những commit và branch mới nhất từ remote về local
+  git clone : copy remote repo về local repo
+  git fetch : lấy những commit và branch mới nhất từ remote về local(khi local repo đã liên kết với remote repo)
+==> Chưa hoành chỉnh: 3đ
 
 6. Phân biệt git fetch và git pull
    git fetch : lấy những commit và branch mới nhất từ remote về local
-   git pull = git fetch + git merge : lấy những commit và branch mới nhất từ remote về local và merge với nhánh trung gian 
+   git pull = git fetch + git merge : lấy những commit và branch mới nhất từ remote về local và merge  nhánh trung gian vào nhánh hiện tại
+VD: git pull origin todo-app-1.0 --> thì nhánh trung gian sẽ là origin/todo-app-1.0
+==> Chưa hoành chỉnh: 2đ
 	
 7. Phân biệt git pull và git pull --rebase
    git pull : lấy những commit và branch mới nhất từ remote về local và merge với nhánh trung gian 
-   git pull --rebase : lấy những commit và branch mới nhất từ remote về local và rebase với nhánh trung gian 
+   git pull --rebase : lấy những commit và branch mới nhất từ remote về local và rebase với nhánh trung gian
+==> Lỗi giống câu 5, 6 đã trừ: 3đ
 
 8. Git log dùng để làm gì
-   để xem commit cha của commit mà con trỏ HEAD đang trỏ đến
+   để xem commit cha của commit mà con trỏ HEAD đang trỏ đến và commit hiện tại
+==> Đúng: 3đ
 
 9. Git status dùng để làm gì
-   dùng để xem trạng thái của các file
+   dùng để xem trạng thái untracked, modified, staged ngoại trừ unmodified của các file
+==> 3đ
 
 10. Git add dùng để làm gì
    dùng để đưa các file đã thay đổi hoặc vừa tạo vào trọng thái staged
+==> Đúng: 4đ
 
 11. Git commit dùng để làm gì
    dùng để tạo commit mới từ chỗ con trỏ HEAD
+==> A cần chi tiết hơn
+==> Khi commit git sẽ làm gì
+==> Khi nào mình commit, commit những file nào
+==> 2đ
 
 12. Mô tả lệnh để tạo branch ở local
    git branch nhanh1 nhanh2
    tạo 1 branch mới từ branch hiện tại hoặc branch khác
+   git branch nhanh1 hash1 --> tạo từ commit hash1
+   git branch nhanh1       --> tạo từ commit mà HEAD đang trỏ đến
+==> Thiếu: 2đ
 
 13. Mô tả lệnh để xóa branch ở local
-   git branch -d tennhanh 
+   git branch -d tennhanh thiếu trường hợp -D và giải thích: 2đ
    xóa nhánh ở local nhưng HEAD không được trỏ đến nhánh đó 
 
+
 14. Mô tả lệnh để xóa branch ở remote
-   git push tennhanh -d
+   git push origin tennhanh -d
    xóa nhánh ở remote
+==> Sai: 0đ
 
 15. Nhánh trung gian là gì
    là nhánh chứa tất cả các commit được lấy từ remote về
+==> Đúng: 4đ
 
 16. Detach HEAD là gì 
+==> ==> Là trạng thái khi HEAD trỏ trực tiếp đến commit ko thông qua branch
+
 17. Phân biệt HEAD và BRANCH
    HEAD : có thể trỏ đến commit hoặc branch bất kỳ 
    BRANCH : trỏ đến commit hiện tại và chuyển sang commit mới nếu tạo commit mới, không thể tùy ý di chuyển
+==> Đúng(chưa hoàn chỉnh): 3đ
+==> A cần chi tiết hơn dùng HEAD, BRANCH để làm gì, khi nào tạo branch, khi nào nhảy nhánh cú pháp thế nào
 
 18. Có mấy cách để xóa commit, mô tả và cho ví dụ
   có 2 cách:
@@ -96,17 +121,18 @@ git commit -m "Add file c8"
    + git reset --hard HEAD~i
    xóa i commit mà HEAD đang trỏ đến branch đó theo thứ tự, nội dung thay đổi của commit đó sẽ không lưu lại
    vd: git reset --hard HEAD~2 sẽ xóa 2 commit gần nhất
-   
+==> Đúng: 4đ
 
 19. Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
    untracked : file vừa mới tạo và chưa từng commit
    modified  : file đã từng commit và đang được sửa đổi
    unmodified: file đã commit và chưa được sửa đổi
    staged    : file đã sẵng sàng commit
+==> Đúng: 4đ
 
 20. Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
    b1: xác định task đó thuộc version nào 
-   b2: xác định task đó thuộc branch nào 
+   b2: xác định version đó cần code trên remote branch nào 
    b3: clone(fetch) và tạo nhánh mới từ branch của task
    b4: code-add-commit
    nếu bị rejected thì git pull --rebase rồi push lên lại
@@ -117,5 +143,5 @@ vd: task đó thuộc version 1.0 của dự án
     git branch t1 origin/todo-app-1.0
     tạo file mới code và commit 
     push code lên remote bằng lệnh : git push origin t1:todo-app-1.0
-
+==> Đúng: 4đ
 
