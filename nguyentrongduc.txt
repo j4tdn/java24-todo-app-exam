@@ -5,76 +5,107 @@ git pull
 git commit -m "commit 1"
 git commit -m "commit 2"
 git commit -m "commit 3"
-git checkout -b feature
+git checkout -b feature --> vì HEAD đang ở master nên e làm như này ok 
+--> an toàn thì nhớ là tạo nhánh mới từ nhánh cũ nào hoặc từ hash nào
 git commit -m "commit 4"
 git commit -m "commit 5"
 git checkout master
 git checkout -b bug
+--> tương tự chỗ này thay vì phải dùng 2 lệnh e có thể: git checkut -b bug master
 git commit -m "commit 6"
 git commit -m "commit 7"
 git commit -m "commit 8"
 ```
+==> Đúng: 4đ
 
 2. Viết lệnh thực hiện gộp nhánh bug vào nhánh feature sử dụng git merge
 ```
 git checkout feature
 git merge bug
 ```
+==> Đúng: 4đ
 
 3. Viết lệnh thực hiện gộp nhánh feature vào bug sử dụng git rebase
 ```
 git checkout bug
 git rebase feature
 ```
+==> Đúng: 4đ
 
 4. Phân biệt git merge và git rebase(giống, khác nhau, khi nào nên sử dụng)
 Giống:
 * Để hợp nhất sự thay đổi từ hai nhánh khác nhau
+* Nội dung code giống nhau
+* Giống nhau 100% khi 2 nhánh trên 1 đường thẳng
 Khác:
-* `merge` giữ nguyên commit graph, `rebase` thì không
+* `merge` giữ nguyên commit graph, `rebase` thì không ==> Chưa rõ, chưa đúng lắm
 Khi nào nên sử dụng
 * `merge` nên dùng khi tạo Pull request từ `feat` vào `main`
 * `rebase` nên dùng tại local trước khi tạo pull request
+==> Chưa đúng
+==> Phần quan trọng, học kỹ lại giúp a tại: https://docs.google.com/document/d/10kU8PTbwAn9u_GuJitIstCJTnMKIY9B9/edit
+==> 1đ
 
 5. Phân biệt git fetch và git clone
-`git fetch` dùng để tải xuống commit mới từ remote xuống remote branch
+`git fetch` dùng để tải xuống commit mới từ remote xuống remote branch sai
 `git clone` dùng để tải xuống một repository mới từ remote
++ git fetch: lấy code mới nhất trên remote về nhưng trước đó chúng ta phải liên kết local repo với remote repo, và tạo 1 dự án 
++ git clone: dùng khi máy chủ chưa có local repository ,nó sẽ tự động tạo 1 dự án có tên giống với tên remote repo,tự động liên kết với remote repo và tạo 1 branch trùng với default branch 
+==> 2đ
 
 6. Phân biệt git fetch và git pull
 `git fetch` dùng để tải xuống commit mới tử remote
 `git pull`, theo mặc định là sự kết hợp của `git fetch` và `git merge`, dùng để tảỉ commit từ remote branch xuống local branch.
+==> 3đ
 
 7. Phân biệt git pull và git pull --rebase
 `git pull`  = `git fetch` + `git merge origin/<<remote tracking branch>>`
 `git pull --rebase`  = `git fetch` + `git rebase origin/<<remote tracking branch>>`
+==> Đúng: 3đ
 
 8. Git log dùng để làm gì
 để xem lịch sử commit của branch
+==> git log: xem lịch sử commit hiện tại mà HEAD đang trỏ đến và các commit cha
+==> git log --all: xem lịch sử tất cả commit có branch trỏ đến, các commit ko có branch trỏ đến sẽ ko hiển thị
+==> Chưa hoàn chỉnh: 2đ
 
 9. Git status dùng để làm gì
-để xem trạng thái của files: deleted, modified, moved, untracked, staged
+để xem trạng thái của files: modified, untracked, staged
+==> file ko có 2 trạng thái a vừa xóa: 3đ
 
 10. Git add dùng để làm gì
 để chuẩn bị files để commit - thay đổi trạng thái sang staged (will be committed)
+==> Đúng: 4đ
 
 11. Git commit dùng để làm gì
 Lưu sự thay đổi của các files trong staged thành một commit mới
+==> A cần chi tiết hơn
+==> Khi commit git sẽ làm gì
+==> Khi nào mình commit, commit những file nào
+==> 2đ
 
 12. Mô tả lệnh để tạo branch ở local
-git checkout -b <<branch-name>>
+git checkout -b <<branch-name>>: tạo branch-name từ HEAD và đưa HEAD đến branch-name
+==> Thiếu 3 cách khác ..: 1đ
 
 13. Mô tả lệnh để xóa branch ở local
 
 git branch -d <<branch-name>>
+==> Thiếu option -D và giải thích: 2đ
 
 14. Mô tả lệnh để xóa branch ở remote
+==> 0đ
 
 16. Detach HEAD là gì
 khi không  checkout vào một branch mà checkout vào một commit hoặc tag
+==> Tag là gì :P
+==> Đúng nhưng tag a ko hướng dẫn: 3đ
 
 17. Phân biệt HEAD và BRANCH
 HEAD: trỏ đến commit đang làm việc
 BRANCH: trỏ đến commit cụ thể trong repos
+==> A cần chi tiết hơn dùng HEAD, BRANCH để làm gì, khi nào tạo branch, khi nào nhảy nhánh cú pháp thế nào
+==> Đúng(chưa hoàn chỉnh): 3đ
 
 18. Có mấy cách để xóa commit, mô tả và cho ví dụ
 `git reset` + `git push -f`: Xóa commit khỏi graph
@@ -82,6 +113,7 @@ BRANCH: trỏ đến commit cụ thể trong repos
 
 git branch -d <<remote-name>> <<branch-name>>
 i.e. git branch -d origin feat/1
+==> phần này có google ko em: ghi hơi lung tung: 1đ a cần xóa commit chứ chưa cần push hay xóa commit ở remote
 
 19. Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
 untracked: file chưa tracked (theo dõi)
@@ -89,6 +121,7 @@ deleted: file đã tracked bị xóa
 modified: file đã tracked bị thay đổi
 moved: file đã tracked bị di chuyển
 staged: file chuẩn bị đc commit
+==> A đâu có hướng dẫn deleted và move hè: 2đ
 
 20. Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
 ....
