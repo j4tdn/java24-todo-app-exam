@@ -26,61 +26,102 @@ git commit -m "Added C7"
 touch C8.txt
 git add C8.txt
 git commit -m "Added C8"
+==> Đúng 4đ
 
 2. Viết lệnh thực hiện gộp nhánh bug vào nhánh feature sử dụng git merge
 -> git checkout feature
    git merge bug
+==> Đúng 4đ
+
 3. Viết lệnh thực hiện gộp nhánh feature vào bug sử dụng git rebase
 -> git checkout bug
  git rebase feature
+==> Đúng 4đ
+
 4. Phân biệt git merge và git rebase(giống, khác nhau, khi nào nên sử dụng)
 -> 	giống nhau: 
-git merge và git rebase giống nhau khi sử dung khi gộp nhánh thẳng hang ( khi gộp nhánh cha vào nhánh con, no conflict)
+git merge và git rebase giống nhau khi sử dung khi gộp nhánh thẳng hàng ( khi gộp nhánh cha vào nhánh con, no conflict)
+kết quả source code sẽ giống nhau
 	khác nhau:
-git merge sẽ tạo commit ra thêm 1 commit mới ( xấu dòng thời gian, lịch sử) 
+git merge sẽ tạo commit ra thêm 1 commit mới ( xấu dòng thời gian, lịch sử) --> này là xấu trong push code lên remote thôi em nha, còn khi merge 2 branch của dự án ví dụ todo-app-1.0 và todo-app-2.0 ở remote thì mình sẽ sử dụng merge để có merged-commit biết là 2 branch đó đã gộp rồi
 git rebase có số lượng commit mới bang với commit cũ ( đồng thời đẩy lên commit mới nhất )
 git merge chỉ fix conflict 1 lần duy nhất 
 git rebase sẽ fix conflict nhiều lần 
-	sử dung
-git merge nên sử dung khi làm việc local 
-git rebase nên sử dung khi làm việc trên remote để có thể dễ cập nhật, tìm kiếm
+	sử dụng
+git merge nên sử dung khi làm việc local(remote cũng làm e nha)
+git rebase nên sử dung khi làm việc khi push code bị reject, fetch + rebase để ko tạo commit merge
+==> E tham khảo thêm ở đây giúp a nha: https://docs.google.com/document/d/10kU8PTbwAn9u_GuJitIstCJTnMKIY9B9/edit
+==> 3đ
+
 5. Phân biệt git fetch và git clone
 -> git clone là sao chép dự án trên remote về máy mình lần đầu tiên khi chưa có dự án.
-git fetch là khi đã có thư mục làm việc của dự án trên máy, sử dụng để cập nhập code mới nhất của dự án.
+git fetch là khi đã có thư mục làm việc của dự án trên máy, sử dụng để cập nhập code mới nhất của dự án(thiếu phần quan trọng là local repo đã liên kết với remote repo, kiểm tra thông qua lệnh git remote -v)
+--> 3đ
+
 6. Phân biệt git fetch và git pull
 -> git fetch để sao chép dự án về máy mình khi đã có sẵn dự án, cập nhập code.
-git pull là sự kết hợp của git fetch và git merge, vừa fetch code dự án về và merge code đó vào nhánh HEAD dang trỏ đến trong máy.
+git pull là sự kết hợp của git fetch và git merge, vừa fetch code dự án về và merge code đó(code của nhánh mà mình đang pull ví dụ git pull origin todo-app-1.0 thì nó sẽ fetch todo-app-1.0 về origin/todo-app-1.0 sau đó merge origin/todo-app-1.0 vào nhánh hiện tại HEAD đang trỏ đến) vào nhánh HEAD dang trỏ đến trong máy.
+--> Đúng: 3đ
+
 7. Phân biệt git pull và git pull --rebase
 -> git pull mặc định sẽ là git fetch và git merge
 git pull  --rebase thì sẽ là git fetch và git rebase
+--> Đúng: 2đ(tương tự câu 6 vì a cần giải thích rõ hơn + ví dụ code)
+
 8. Git log dùng để làm gì
--> git log dùng để hiển thị lịch sử commit 
+-> git log dùng để hiển thị lịch sử commit hiện tại và commit cha ở nơi mà HEAD đang đứng
+==> A cần chi tiết hơn các option của git log ...
+==> Chưa đầy đủ: 2đ
+
 9. Git status dùng để làm gì
--> git status dùng để hiện thị trạng thái của các file.
+-> git status dùng để hiện thị trạng thái(untracked, modified, staged) của các file.
+==> Đúng: 3đ
+
 10. Git add dùng để làm gì
 -> git add để đưa các file có trang thái untracked và modified vào trạng thái staged để tiến hành commit
+==> Đúng: 4đ
+
 11. Git commit dùng để làm gì
 -> git commit để lưu lại những thay đổi trong quá trình làm việc như 1 version
+==> Đúng: 4đ
+
 12. Mô tả lệnh để tạo branch ở local
 -> git branch branch_new branch_old 
+-> git branch branch_new commit_hash
+-> git branch branch_new (tạo branch_new từ vị trí hiện tại mà HEAD đang đứng)
+-> git checkout -b ....
+Thiếu: 1đ
+
 13. Mô tả lệnh để xóa branch ở local
 -> có 2 lệnh
 git branch -d branch_name
 git branch -D branch_name
+==> Đúng: 3đ thiếu giải thích
+
 14. Mô tả lệnh để xóa branch ở remote
 -> git push origin --delete branch_name
+==> Đúng: 4đ (E có thể dùng lệnh gọi hơn là git push origin branch_name -d)
+
 15. Nhánh trung gian là gì
 -> là nhánh có dạng orgin/tên_nhánh_remote, là một phiên bản của nhánh remote khi fetch về local
+==> Đúng: 4đ
+
 16. Detach HEAD là gì
+==> Là trạng thái khi HEAD trỏ trực tiếp đến commit ko thông qua branch
+
 17. Phân biệt HEAD và BRANCH
 -> HEAD là một con trỏ đặc biệt có thể trỏ đến branch và các commit.
 + khi head trỏ đến 1 branch thì mỗi khi có một commit mới, branch cùng với head sẽ nhảy lên
 + khi head trỏ đến một commit và branch cũng trỏ đến commit đó, thì khi có một commit mới Head sẽ nhảy lên commit mới đó (không được branch trỏ đến) còn branch vẫn đứng yên tại commit cũ.
 BRANCH hay còn gọi là nhánh, branch khi được HEAD trỏ đến thì mỗi khi thực hiện một commit mới branch mới nhảy lên commit đó còn nếu không thì branch vẫn đứng yên. 
+==> Tạm ổn: 2đ
+==> A cần chi tiết hơn về cách sử dụng BRANCH cũng như nhảy HEAD, BRANCH ...
+
 18. Có mấy cách để xóa commit, mô tả và cho ví dụ
 -> có 2 cách để xóa commit:
 	git reset --soft HEAD~"số commit cần xóa " : lệnh này sẽ xóa commit nhưng vẫn giữ lại thay đổi đã thực hiện để có thể sửa lại 
 	git reset --hard HEAD~"số commit cần xóa " : lệnh này sẽ xóa sạch toàn bộ không giữ lại thứ gì
+==> Đúng: 4đ
 
 19. Liệt kê các trạng thái của file trong git, giải thích từng trạng thái
 ->
@@ -88,6 +129,8 @@ untracked: là trạng thái ban đầu của file khi mới tạo
 unmodified: là trạng thái sau khi được commit
 modified: là trạng thái mà đã được commit xong nhưng thực hiện sửa đổi
 staged: là trạng thái sẵn sàng để chuẩn bị commit, các file có trạng thái untracked và modified phải được đưa vào trạng thái này nếu muốn commit 
+==> Đúng: 4đ
+
 20. Mô tả các bước cần thực hiện khi nhận 1 task từ dự án, cho ví dụ
 -> các bước cần thực hiện khi nhận 1 task từ dự án: 
 1. Kiểm tra xem task đó thuộc version/ nhánh nào 
@@ -100,5 +143,7 @@ Nhận task 07. + Update version TODO-APP-2.0-SNAPSHOT từ REMOTE BRANCH: todo-
 + đầu tiên kiểm tra xem task đó thuộc nhánh nào ( todo-app-2.0 )
 + git fetch 
 + tạo nhánh làm việc ( t7-upd ) từ nhánh trung gian trên remote ( origin/todo-app-2.0)
+==> E thiếu 1 bước quan trọng là đưa HEAD sang nhánh t7-upd trước khi coding
 + thực hiện coding, add, commit 
-+ push code 
++ push code thiếu khi bị reject thì sẽ làm gì
+==> Chưa đầy đủ: 2đ
